@@ -22,8 +22,31 @@
 <body>
   <!-- start of Main  -->
   <div class="main">
+
+    <!-- start of Header  -->
+    <header class="header">
+      <div class="container">
+        <div class="row flex-end">
+          <button class="nav-toggler" type="button">
+            <span></span>
+          </button>
+          <div class="nav">
+            <div class="nav-inner">
+              <ul>
+                <li><a href="#" class="nav-item">home</a></li>
+                <li><a href="#" class="nav-item">about</a></li>
+                <li><a href="#" class="nav-item">portfolio</a></li>
+                <li><a href="#" class="nav-item">contact</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- end of Header  -->
+
     <!-- start of Home Section -->
-    <section class="home-section align-items-center hidden">
+    <section class="home-section align-items-center">
       <div class="container">
         <div class="row align-items-center">
           <div class="home-text">
@@ -461,7 +484,7 @@
     <!-- end of Portfolio  -->
 
     <!-- start of Contact Section -->
-    <section class="contact-section sec-padding">
+    <section class="contact-section sec-padding hidden">
       <div class="container">
         <div class="row">
           <div class="section-title">
@@ -482,7 +505,7 @@
                   <input type="text" placeholder="Subject" class="input-control" required>
                 </div>
                 <div class="input-group">
-                  <textarea placeholder="Messabe" class="input-control" required></textarea>
+                  <textarea placeholder="Message" class="input-control" required></textarea>
                 </div>
                 <div class="submit-btn">
                   <button type="submit" class="btn">send message</button>
