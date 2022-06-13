@@ -67,6 +67,34 @@ section {
   min-height: calc(100vh - 70px);
   border-radius: 30px;
   backdrop-filter: var(--backdrop-filter-blur);
+  display: none;
+}
+
+section.active {
+  display: block;
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+section.fade-out {
+  animation: fadeOut 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 a {
@@ -204,6 +232,98 @@ button {
 
 /* end of Global Settings */
 
+/* start of Background Circles */
+.bg-circles {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  max-width: 1200px;
+  width: calc(100% - 30px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bg-circles div {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.bg-circles .circle-1 {
+  height: 60px;
+  width: 60px;
+  background-color: var(--blue);
+  left: 5%;
+  top: 10%;
+  opacity: 0.3;
+  animation: zoomInOut 8s linear infinite;
+}
+
+@keyframes zoomInOut {
+  0%,
+  100% {
+    transform: scale(0.5);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+
+.bg-circles .circle-2 {
+  height: 80px;
+  width: 80px;
+  background-color: var(--main-color);
+  left: 40%;
+  top: 55%;
+  opacity: 0.4;
+  animation: bounceTop 5s ease-in-out infinite;
+}
+
+@keyframes bounceTop {
+  0%,
+  100% {
+    transform: translateY(-50px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+}
+
+.bg-circles .circle-3 {
+  height: 120px;
+  width: 120px;
+  background-color: var(--white);
+  top: 40%;
+  right: -60px;
+  opacity: 0.6;
+}
+
+.bg-circles .circle-4 {
+  height: 50px;
+  width: 50px;
+  background-color: var(--orange);
+  top: 80%;
+  left: -30px;
+  opacity: 0.6;
+}
+/* end of Background Circles */
+
+/* start of Overlay  */
+.overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  z-index: 200;
+  visibility: hidden;
+}
+
+.overlay.active {
+  visibility: visible;
+}
+/* end of Overlay */
+
 /* start of Header  */
 .header {
   position: absolute;
@@ -212,6 +332,17 @@ button {
   width: 100%;
   z-index: 1;
   padding: 20px 0 0;
+}
+
+.header.active {
+  position: fixed;
+  top: 35px;
+  padding: 20px 15px;
+}
+
+.header.active .container {
+  max-width: 1200px;
+  margin: auto;
 }
 
 .header .nav-toggler {
@@ -226,6 +357,12 @@ button {
   justify-content: center;
   margin: 0 15px;
   z-index: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.header .nav-toggler.hide {
+  opacity: 0;
+  transition: none;
 }
 
 .header .nav-toggler span {
@@ -233,6 +370,11 @@ button {
   width: 24px;
   background-color: var(--main-color);
   position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.header.active .nav-toggler span {
+  background-color: transparent;
 }
 
 .header .nav-toggler span::before,
@@ -251,13 +393,21 @@ button {
   transform: translateY(-8px);
 }
 
+.header.active .nav-toggler span::before {
+  transform: rotate(45deg);
+}
+
 .header .nav-toggler span::after {
   right: 0;
   transform: translateY(8px);
 }
 
-.header .nav-toggler:hover span::before,
-.header .nav-toggler:hover span::after {
+.header.active .nav-toggler span::after {
+  transform: rotate(-45deg);
+}
+
+.header:not(.active) .nav-toggler:hover span::before,
+.header:not(.active) .nav-toggler:hover span::after {
   width: 50%;
 }
 
@@ -272,6 +422,10 @@ button {
   visibility: hidden;
 }
 
+.header.active .nav {
+  visibility: visible;
+}
+
 .header .nav-inner {
   min-height: calc(100vh - 70px);
   background-color: var(--white-alpha-25);
@@ -284,6 +438,11 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.header.active .nav-inner {
+  opacity: 1;
 }
 
 .header .nav-inner ul li {
@@ -324,8 +483,11 @@ button {
 
 /* start of Home Section */
 .home-section {
-  display: flex;
   padding: 120px 0;
+}
+
+.home-section.active {
+  display: flex;
 }
 
 .home-text,
@@ -384,7 +546,7 @@ button {
   padding: 0 15px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -397,7 +559,6 @@ button {
   background-color: var(--white-alpha-25);
   max-width: 380px;
   border: 1px solid var(--white-alpha-40);
-  margin: auto;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -602,3 +763,83 @@ button {
   margin: 0 0 5px;
 }
 /* end of Contact Section  */
+
+/* start of Responsive */
+@media (max-width: 991px) {
+  .container {
+    padding: 0;
+  }
+
+  .contact-section .container {
+    padding: 0 40px;
+  }
+
+  .home-text,
+  .home-img {
+    width: 100%;
+  }
+
+  .home-text {
+    text-align: center;
+    padding-left: 15px;
+  }
+
+  .home-img {
+    order: -1;
+  }
+
+  .home-img .img-box {
+    max-width: 300px;
+  }
+
+  .home-text .btn {
+    margin: 0 7px 15px;
+  }
+
+  .portfolio-item {
+    width: calc(50% - 30px);
+  }
+}
+
+@media (max-width: 767px) {
+  .about-img,
+  .about-text {
+    width: 100%;
+  }
+
+  .about-img .btn {
+    margin-top: 30px;
+  }
+
+  .about-text {
+    margin-top: 30px;
+    padding: 0 35px;
+  }
+
+  .portfolio-item {
+    width: calc(100% - 30px);
+  }
+
+  .pp-inner {
+    padding: 30px 15px;
+  }
+}
+
+@media (max-width: 575px) {
+  .section-title h2,
+  .header .nav-inner ul li a {
+    font-size: 35px;
+  }
+  .home-text h1 {
+    font-size: 30px;
+  }
+
+  .home-text h2 {
+    font-size: 18px;
+  }
+
+  .pp-header h3 {
+    font-size: 20px;
+  }
+}
+/* end of Responsive */
