@@ -13,13 +13,21 @@
   <!-- Favicon -->
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
-  <title>Mia Web Dev</title>
+  <title>Sinlaam Web Dev</title>
   <!-- Fontsawsome -->
   <script src="https://kit.fontawesome.com/fad473a64e.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
+  <!-- start of Page Loader  -->
+  <div class="page-loader">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <!-- end of Page Loader  -->
+
   <!-- start of Background Circles -->
   <div class="bg-circles">
     <div class="circle-1"></div>
@@ -34,7 +42,7 @@
   <!-- end of Overlay -->
 
   <!-- start of Main  -->
-  <div class="main">
+  <div class="main hidde">
 
     <!-- start of Header  -->
     <header class="header">
@@ -59,12 +67,12 @@
     <!-- end of Header  -->
 
     <!-- start of Home Section -->
-    <section class="home-section align-items-center active" id="home">
+    <section class="home-section align-items-center" id="home">
       <div class="container">
         <div class="row align-items-center">
           <div class="home-text">
             <p>Hello, I'm</p>
-            <h1>mia</h1>
+            <h1>Sinlaam</h1>
             <h2>frontend web developer</h2>
             <a href="#about" class="btn link-item">more about me</a>
             <a href="#portfolio" class="btn link-item">portfolio</a>
@@ -98,14 +106,15 @@
           <div class="about-text">
             <h2>skills</h2>
             <ul>
-              <li><i class="fa-solid fa-code"></i>HTML, CSS, Saas, Less, Bootstrap, Element-UI</li>
+              <li><i class="fa-solid fa-code"></i>HTML, CSS, Saas, Less, Bootstrap</li>
               <li><i class="fa-brands fa-node-js"></i>JavaScript, jQuery, Object-Oriented Programming, ES6</li>
-              <li><i class="fa-brands fa-react"></i>React, Redux, Hook</li>
-              <li><i class="fa-brands fa-vuejs"></i>Vue, Vue-cli, Vue-router, Vuex</li>
+              <!-- <li><i class="fa-brands fa-react"></i>React, Redux, Hook</li> -->
+              <!-- <li><i class="fa-brands fa-vuejs"></i>Vue, Vue-cli, Vue-router, Vuex, Element-UI</li> -->
               <li><i class="fa-solid fa-rss"></i>Ajax, HTTP Protocol, Axios</li>
-              <li><i class="fa-solid fa-server"></i>Node, Webpack, Npm, Express, PHP, Laravel, MySQL, Java</li>
+              <li><i class="fa-solid fa-server"></i>Node, Webpack, Npm, Express</li>
+              <!-- PHP, Laravel, MySQL, Java -->
               <li><i class="fa-brands fa-git-square"></i>Git, GitHub</li>
-              <li><i class="fa-brands fa-wordpress"></i>WrodPress, Shopify</li>
+              <!-- <li><i class="fa-brands fa-wordpress"></i>WrodPress, Shopify</li> -->
             </ul>
           </div>
         </div>
@@ -506,23 +515,23 @@
           </div>
         </div>
         <div class="row">
-          <div class="contact-form">
-            <form action="#">
+          <div class="contact-form" >
+            <form action="https://formspree.io/f/xnqwrlll" method="POST" id="contact-form">
               <div class="row">
                 <div class="input-group">
-                  <input type="text" placeholder="Name" class="input-control" required>
+                  <input type="text" placeholder="Name" class="input-control" required name="Name">
                 </div>
                 <div class="input-group">
-                  <input type="text" placeholder="Email" class="input-control" required>
+                  <input type="text" placeholder="Email" class="input-control" required name="Email">
                 </div>
                 <div class="input-group">
-                  <input type="text" placeholder="Subject" class="input-control" required>
+                  <input type="text" placeholder="Subject" class="input-control" required name="Subject">
                 </div>
                 <div class="input-group">
-                  <textarea placeholder="Message" class="input-control" required></textarea>
+                  <textarea placeholder="Message" class="input-control" required name="Message"></textarea >
                 </div>
                 <div class="submit-btn">
-                  <button type="submit" class="btn">send message</button>
+                  <button type="submit" class="btn send-msg">send message</button>
                 </div>
               </div>
             </form>
@@ -530,7 +539,7 @@
           <div class="contact-info">
             <div class="contact-info-item">
               <h3>Email</h3>
-              <p>intelli-web-dev@outlook.com</p>
+              <p>wusinlaam@outlook.com</p>
             </div>
           </div>
         </div>
@@ -548,7 +557,7 @@
         <div class="pp-header">
           <button type="button" class="btn pp-close"><i class="fa-solid fa-xmark"></i></button>
           <div class="pp-thumbnail">
-            <img src="./img/portfolio-rosa.png" alt="rosa" />
+            <img src="" alt="project-img" />
           </div>
           <h3></h3>
         </div>
