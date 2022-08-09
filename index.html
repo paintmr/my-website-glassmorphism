@@ -100,16 +100,17 @@
             <div class="img-box">
               <img src="img/about.jpg" alt="about img" />
             </div>
-            <a href="cv.pdf" class="btn" target="_blank">download CV</a>
+            <a href="Sinlaam-resume.pdf" class="btn" target="_blank">resume</a>
             <a href="#contact" class="btn link-item">contact me</a>
           </div>
           <div class="about-text">
             <h2>skills</h2>
             <ul>
-              <li><i class="fa-solid fa-code"></i>HTML, CSS, Saas, Less, Bootstrap</li>
-              <li><i class="fa-brands fa-node-js"></i>JavaScript, jQuery, Object-Oriented Programming, ES6</li>
+              <li><i class="fa-solid fa-code"></i>HTML, CSS, Sass, Less, Bootstrap</li>
+              <li><i class="fa-brands fa-node-js"></i>JavaScript, jQuery, Object-Oriented Programming</li>
               <!-- <li><i class="fa-brands fa-react"></i>React, Redux, Hook</li> -->
               <!-- <li><i class="fa-brands fa-vuejs"></i>Vue, Vue-cli, Vue-router, Vuex, Element-UI</li> -->
+              <li><i class="fa-brands fa-react"></i>React, Redux, Vue</li>
               <li><i class="fa-solid fa-rss"></i>Ajax, HTTP Protocol, Axios</li>
               <li><i class="fa-solid fa-server"></i>Node, Webpack, Npm, Express</li>
               <!-- PHP, Laravel, MySQL, Java -->
@@ -131,6 +132,96 @@
           </div>
         </div>
         <div class="row">
+          <!-- start of Portfolio Item  -->
+          <div class="portfolio-item">
+            <div class="portfolio-item-thumbnail">
+              <img src="./img/portfolio-reactToDoList.png" alt="reactToDoList" />
+            </div>
+            <h3 class="portfolio-item-title">React To-Do List</h3>
+            <button type="button" class="btn view-project-btn">view project</button>
+            <div class="portfolio-item-details">
+              <div class="description">
+                <ul>
+                  <li><i class="fa-solid fa-globe"></i>This is a to-do list made with React.</li>
+                  <li><i class="fa-solid fa-gear"></i>Technologies used: HTML, CSS, JavaScript, React, React-Redux, Redux-Thunk, FontAwesome</li>
+                </ul>
+              </div>
+              <div class="general-info">
+                <ul>
+                  <li><i class="fa-solid fa-circle-check"></i>A Store is created to store data.</li>
+                  <li><i class="fa-solid fa-circle-check"></i>The Provider from React-Redux connects the Store and the App.</li>
+                  <li><i class="fa-solid fa-circle-check"></i>Four UI components are made for user interaction: AddTodo, FilterSetter, TodoList (having a sub-component - Todo), and Alert. The user can add items through AddTodo. The user can choose which to-do list (all, the things to be done, the things finished) to show by clicking the buttons of the FilterSetter component. The user can change the status of the item(active, completed) by clicking the item(Todo) component of the TodoList component.</li>
+                  <li><i class="fa-solid fa-circle-check"></i>The AddTodo component can check if the user has entered anything and something that exists. When the user has entered something that exists, an alert layer pops up and then disappears itself after the user is reminded.</li>
+                  <li><i class="fa-solid fa-circle-check"></i>Four container components are made to connect Store and the four UI compoents. Each container component uses Connect from React-Redux to connect mapStateToProps and mapDispatchToProps with its corresponding UI component, so that each UI component can use Store data and dispaction actions easily.</li>
+                  <li><i class="fa-solid fa-circle-check"></i>Redux-Thunk is used to deal with asynchronous actions. When the TodoList component has mounted, an asynchronous action is dispatched to fetch data from a json file( called todos.json which is placed in the public/mock folder during development). Fetch is used to fetch the data. Then the data are stored in Store and shown by the TodoList component. </li>
+                  <li><i class="fa-solid fa-circle-check"></i>Sub-reducers are created based on Store State data: text, filter, todos, and alert.</li>
+                  <li><i class="fa-solid fa-circle-check"></i>Project structure and Store structure:</li>
+                  <li><img src="./img/portfolio-reactToDoList-code.png" alt="portfolio-reactToDoList-code"></li>
+                </ul>
+              </div>
+              <div class="visit-web">
+                <li>
+                  <a href="https://todolist.intellibytesolutions.com" target="_blank" href="#"
+                    class="badge badge-light"><i class="fa-solid fa-circle-arrow-right"></i>Visit React To-Do List</a>
+                </li>
+              </div>
+            </div>
+          </div>
+          <!-- end of Portfolio Item  -->
+
+          <!-- start of Portfolio Item  -->
+          <div class="portfolio-item">
+            <div class="portfolio-item-thumbnail">
+              <img src="./img/portfolio-vueUploadPic.png" alt="vueUploadPic" />
+            </div>
+            <h3 class="portfolio-item-title">Vue Node Express Upload Pictures</h3>
+            <button type="button" class="btn view-project-btn">view project</button>
+            <div class="portfolio-item-details">
+              <div class="description">
+                <ul>
+                  <li><i class="fa-solid fa-globe"></i>On this page, users can upload pictures to a Node server.</li>
+                  <li><i class="fa-solid fa-gear"></i>Technologies used: HTML, CSS, Bulma, Fontawesome, JavaScript, Vue, Axios, Node, Express, Multer, Sharp</li>
+                </ul>
+              </div>
+              <div class="general-info">
+                <ul>
+                  <li><i class="fa-solid fa-circle-check"></i>This website includes two parts: the frond-end part and the back-end part. The front-end part has been developed with Vue, and the back-end has been developed with Express based on Node.</li>
+
+                  <li><i class="fa-solid fa-display"></i>On the front-end side</li>
+                  
+                  <li><i class="fa-solid fa-circle-check"></i>The front-end part consists of three parts (three components): uploading a picture a time by clicking to choose a picture (the SimpleUpload component), uploading several pictures a time (the MultipleUploads component), and uploading a picture a time by dragging and dropping a picture to the uploading zone (the Dropzone component). </li>
+                  <li><i class="fa-solid fa-circle-check"></i>In the SimpleUpload and MultipleUploads components, there are both front-end and back-end verification processes to check if the file is empty, if the file is a picture, and if the file is too large.</li>
+                  <li><i class="fa-solid fa-circle-check"></i>In the MultipleUploads component, the user can see what files she has selected showing between the yellow choose-picture button and the blue send button. The user can click the cross button after each file to unselect the file. Invalid files (not pictures, too large) are in red and will not be sent to the server.</li>
+                  <li><img src="./img/portfolio-vueUploadPic-uploadinfo.png" alt=""></li>
+
+                  <li><i class="fa-solid fa-circle-check"></i>In the Dropzone component, there is a progress bar to show the uploading progress. When the picture has been uploaded, it can be seen underneath the Dropzone.</li>
+                  <li><img src="./img/portfolio-vueUploadPic-Dropzone.png" alt=""></li>
+
+                  <li><i class="fa-solid fa-circle-check"></i>FormData() is used to process pictures to be uploaded.</li>
+                  <li><i class="fa-solid fa-circle-check"></i>Axios, async, await, try and catch are used to make requests to and handle responses from the server.</li>
+                  <li><i class="fa-solid fa-circle-check"></i>Bulma has many easy-to-use upload styles, and some of them are used in this project.</li>
+                  <li><i class="fa-solid fa-circle-check"></i>vue.config.js (including publicPath, assetsDir, and outputDir) is used to make sure the page works well after building, otherwise the index page would be blank.</li>
+
+
+                  <li><i class="fa-solid fa-server"></i>On the server side</li>
+                  
+                  <li><i class="fa-solid fa-circle-check"></i>Nodemon is used for easier development.</li>
+                  <li><i class="fa-solid fa-circle-check"></i>The Cross-Origin Resource Sharing problem is solved to make information transfer smooth.</li>
+                  <li><i class="fa-solid fa-circle-check"></i>Multer is used for handling multipart/form-data. Multer is used on the server side to verify the uploaded file.</li>
+                  <li><i class="fa-solid fa-circle-check"></i>Sharp is used to process pictures uploaded. Sharp can resize and relocate pictures.</li>
+                  <li><i class="fa-solid fa-circle-check"></i>express.static() is used so that the front-end website can display pictures that have been uploaded.</li>                 
+                </ul>
+              </div>
+              <div class="visit-web">
+                <li>
+                  <a href="https://uploadpic.intellibytesolutions.com" target="_blank" href="#"
+                    class="badge badge-light"><i class="fa-solid fa-circle-arrow-right"></i>Visit Vue Node Express Upload Pictures</a>
+                </li>
+              </div>
+            </div>
+          </div>
+          <!-- end of Portfolio Item  -->
+
           <!-- start of Portfolio Item  -->
           <div class="portfolio-item">
             <div class="portfolio-item-thumbnail">
@@ -345,12 +436,12 @@
             <div class="portfolio-item-thumbnail">
               <img src="./img/portfolio-xczx.png" alt="xczx" />
             </div>
-            <h3 class="portfolio-item-title">codecamp xczx homepage</h3>
+            <h3 class="portfolio-item-title">Coding bootcamp xczx homepage</h3>
             <button type="button" class="btn view-project-btn">view project</button>
             <div class="portfolio-item-details">
               <div class="description">
                 <ul>
-                  <li><i class="fa-solid fa-globe"></i>This is a computer compatible home page made for a code camp.
+                  <li><i class="fa-solid fa-globe"></i>This is a computer compatible home page made for a coding bootcamp.
                   </li>
                   <li><i class="fa-solid fa-gear"></i>Technologies used: HTML, CSS, JavaScript</li>
                 </ul>
@@ -388,12 +479,12 @@
             <div class="portfolio-item-thumbnail">
               <img src="./img/portfolio-bxg.png" alt="bxg" />
             </div>
-            <h3 class="portfolio-item-title">codecamp bxg homepage</h3>
+            <h3 class="portfolio-item-title">Coding bootcamp bxg homepage</h3>
             <button type="button" class="btn view-project-btn">view project</button>
             <div class="portfolio-item-details">
               <div class="description">
                 <ul>
-                  <li><i class="fa-solid fa-globe"></i>This is a computer compatible home page made for a code camp.
+                  <li><i class="fa-solid fa-globe"></i>This is a computer compatible home page made for a coding bootcamp.
                   </li>
                   <li><i class="fa-solid fa-gear"></i>Technologies used: HTML, CSS, JavaScript</li>
                 </ul>
@@ -515,7 +606,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="contact-form" >
+          <div class="contact-form">
             <form action="https://formspree.io/f/xnqwrlll" method="POST" id="contact-form">
               <div class="row">
                 <div class="input-group">
@@ -528,7 +619,7 @@
                   <input type="text" placeholder="Subject" class="input-control" required name="Subject">
                 </div>
                 <div class="input-group">
-                  <textarea placeholder="Message" class="input-control" required name="Message"></textarea >
+                  <textarea placeholder="Message" class="input-control" required name="Message"></textarea>
                 </div>
                 <div class="submit-btn">
                   <button type="submit" class="btn send-msg">send message</button>
